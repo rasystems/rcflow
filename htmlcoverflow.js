@@ -1,18 +1,9 @@
-/*
- * @copyright		© Copyright 2013-2017, epages GmbH, All Rights Reserved.
- *
- * @module			ep.ui.htmlcoverflow
- *
- * @revision		$Revision: 1.16.2.1.2.3 $
- */
-
-/*jslint nomen:true*/
-/*globals define*/
-
-/*  
+/*  DO NOT REMOVE THIS
 ++++++++++++++++++++++++++++++++++++++
 +                                    +
-+     ePSlider - ePages GmbH (R)     +
++     Real Screen Cover Flow         +
++     Copyright: Roman Asimov        +
++     2012 - 2013                    +
 +                                    +
 +      Version: 6.0_DEV              +
 +      Developed by: Roman Asimov    +
@@ -156,18 +147,6 @@ define("ep/ui/htmlcoverflow", [
 
 				console.log('Startbreite von cvs: ',posit_count,' = ',' | Neue Breite: ', tmpWidth);
 			}
-				//********************************************************************************************
-				//********************************************************************************************
-				//********************************************************************************************
-				//********************************************************************************************
-				//********************************************************************************************
-				//********************************************************************************************
-				// HIER MORGEN ALS EINE FUNKTION SCHREIBEN SIEHE EINFACH * -1 !!!!!!!!!!!!!!!!!!!!!!!!!!!
-				//********************************************************************************************
-				//********************************************************************************************
-				//********************************************************************************************
-				//********************************************************************************************
-				//********************************************************************************************
 
 			// 3. alles was kleiner als cur_index ist soll links gedreht sein
 			for (var negat_count = 1; negat_count < self.cur_index; negat_count++) {
@@ -526,119 +505,3 @@ define("ep/ui/htmlcoverflow", [
 
 	return ep;
 });
-
-// 		_skew: function(ctx, img, left, top, portviewWidth, portviewHeight, scalingFactor, offset, index) { 
-// 			if(typeof offset === 'undefined') offset = 0;
-
-// 			var self = this,
-// 					o = self.options,
-// 					// w = img.width,
-// 					// h = img.height,
-// 					w = self.cvsController["image_" + index].imgWidth,
-// 					h = self.cvsController["image_" + index].imgHeight,
-// 					polarity = (portviewWidth > 0) ? 1 : -1,
-// 					sliceNum = Math.abs(portviewWidth),
-// 					sliceWidthOrigin = w / sliceNum,                   
-// 					sliceWidthDest = sliceWidthOrigin * Math.abs(portviewWidth) / w,
-// 					heightScale = h * ((1 - scalingFactor) / sliceNum),
-// 					sx,
-// 					sy,
-// 					dx,
-// 					dy,
-// 					sWidth,
-// 					sHeight,
-// 					dWidth,
-// 					dHeight;
-
-// 			for(var n = 0; n < sliceNum; n++) 
-// 			{
-// 				sx = sliceWidthOrigin * n;
-// 				sy = 0;
-// 				sWidth = sliceWidthOrigin;
-// 				sHeight = h;
-// 				dx = left + (n * sliceWidthDest * polarity);
-// 				dy = top + parseInt((heightScale * n) / 2);
-// 				dWidth = sliceWidthDest;
-// 				dHeight = h - (heightScale * n);
-
-// 				ctx.drawImage(img, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight); 
-// 			}
-// //			console.log("Skew: ",sliceNum);
-// 		},
-
-
-//self.cvsController["image_" + index].ctx.drawImage(self.cvsController["image_" + index].image[0], 0, 0, self.cvsController["image_" + index].imgWidth, self.cvsController["image_" + index].imgHeight);
-
-
-
-// // self.cvsController["image_" + index].ctx.drawImage(this, 0, 0, o.canvas_width, o.canvas_height);
-// self._skew(self.cvsController["image_" + index].ctx, imgController["image_" + index][0], 300, 30, 200, 30, 1, 0);
-// self._skew(self.cvsController["image_" + index].ctx, imgController["image_" + index][0], -10, 10, o.pw, 10, o.sf, 0.1);
-// self.cvsController["image_" + index].ctx.save();
-// self.cvsController["image_" + index].ctx.scale(1, -1);
-// self.cvsController["image_" + index].ctx.translate(0, -canvas_height);
-// // self.cvsController["image_" + index].ctx.save();
-// self.cvsController["image_" + index].ctx.scale(1, -1);
-
-// var gradient = self.cvsController["image_" + index].ctx.createLinearGradient( 0, 0, 0, canvas_height);
-// self._skew(self.cvsController["image_" + index].ctx, imgController["image_" + index][0], -10, -90, o.pw, 10, o.sf, 0.1);
-// gradient.addColorStop( 0, 'rgba( 32, 32, 32, 0.5 )' );
-// gradient.addColorStop( 0.5, 'rgba( 32, 32, 32, 1.0 )' );
-// self.cvsController["image_" + index].ctx.fillStyle = gradient;
-// self.cvsController["image_" + index].ctx.rect( 0, 0, canvas_width, canvas_height );
-// self.cvsController["image_" + index].ctx.fill();
-// // self.cvsController["image_" + index].ctx.save();
-
-// self.cvsController["image_" + index].ctx.restore();
-
-
-// // Slide Function for KeyboardPress Event
-// $(document).keydown(function(e){
-//    switch(e.keyCode){
-//      case 37: if($("#epslider").position().left < 0 && !$("#epslider").is(":animated")){
-//                  $("#epslider").animate({left : "+=" + imageWidth*2 + "px"});
-//                 } break;
-
-//      case 39: if($("#epslider").position().left > stopPosition && !$("#epslider").is(":animated")){
-//                  $("#epslider").animate({left : "-=" + imageWidth*2 + "px"});
-//                 } break;
-//    }
-// });
-
-// Slide Function for Mousewheel Event
-
-// $(document).mousewheel(function(event, delta){
-
-// if(delta > 0)
-// {
-//     if($("#epslider").position().left < 0 && !$("#epslider").is(":animated")){
-//          $("#epslider").animate({left : "+=" + imageWidth + "px"});
-//         }
-// }
-
-// else
-// {
-//     if(delta < 0)
-//     {
-//           if($("#epslider").position().left > stopPosition && !$("#epslider").is(":animated")){
-//                $("#epslider").animate({left : "-=" + imageWidth + "px"});
-//               }
-//     }
-// }
-// event.preventDefault();
-// });
-
-
-// // Swipe Function for Mobile Devices Event
-
-//  $( document ).on( "swiperight",function() {
-//     if($("#epslider").position().left < 0 && !$("#epslider").is(":animated")){
-//         $("#epslider").animate({left : "+=" + imageWidth + "px"});
-//     }
-//  }); 
-
-//  $( document ).on( "swipeleft",function() {
-//     if($("#epslider").position().left > stopPosition && !$("#epslider").is(":animated")){
-//         $("#epslider").animate({left : "-=" + imageWidth + "px"});
-//     }
-//  }); 
